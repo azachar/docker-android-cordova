@@ -18,22 +18,13 @@ RUN nodejs -v
 RUN npm -v
 
 # ------------------------------------------------------
-# --- Cordova CLI
+# --- Cordova, bower, grunt, gulp CLI
 
-RUN npm install -g cordova
+RUN npm install -g cordova bower grunt gulp
 RUN cordova -v
-
-# ------------------------------------------------------
-# --- Install Ant
-
-RUN apt-get install -y ant
-RUN ant -version
-
-# ------------------------------------------------------
-# --- Set missing environment variables
-
-ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64/
-ENV PATH ${PATH}:${JAVA_HOME}
+RUN bower -version
+RUN grunt -version
+RUN gulp -version
 
 # ------------------------------------------------------
 # --- Cleanup and rev num
@@ -41,5 +32,5 @@ ENV PATH ${PATH}:${JAVA_HOME}
 # Cleaning
 RUN apt-get clean
 
-ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_CORDOVA 2016_01_24_1
+ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_CORDOVA 2016_07_10_1
 CMD bitrise -version

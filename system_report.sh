@@ -27,6 +27,9 @@ echo "=== Pre-installed tool versions ========"
 ver_line="$(nodejs -v)" ;     echo "* NodeJS: $ver_line"
 ver_line="$(npm -v)" ;        echo "* npm: $ver_line"
 ver_line="$(cordova -v)" ;    echo "* Cordova: $ver_line"
+ver_line="$(bower -v)" ;    echo "* Bower: $ver_line"
+ver_line="$(grunt -version)" ;    echo "* Grunt: $ver_line"
+ver_line="$(gulp -v)" ;    echo "* Gulp: $ver_line"
 
 echo "========================================"
 echo
